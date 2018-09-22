@@ -37,27 +37,45 @@ function show(Data){
 
 	var lengthRow = document.getElementsByTagName("tr").length;
 
+	var input = document.getElementById("Search").value;
+
+	var find = 1;
 	if(lengthRow > 0){
 		DeleteTable(lengthRow);
 	}
-	
-	for(i = 0; i < Data.length; i++){
-		var row = div.insertRow(i + 1);
-		var cell0 = row.insertCell(0);
-		var cell1 = row.insertCell(1);
-		var cell2 = row.insertCell(2);
-		var cell3 = row.insertCell(3);
-		var cell4 = row.insertCell(4);
 
-		cell0.innerHTML = Data[i].nama;
-		cell1.innerHTML = Data[i].semester;
-		cell2.innerHTML = Data[i].hobby;
-		cell3.innerHTML = '<button onclick="ShowUpdate('+i+')"> Update </button>';
-		cell4.innerHTML = '<button onclick="Delete('+i+')"> Delete </button>';
+	for(i = 0; i < Data.length; i++){
+		var compare = true;
+
+		var count = 0;
+		while(count < input.length && compare){
+			if(input[count].toUpperCase() != DataMahasiswa[i].nama[count].toUpperCase()){
+				compare = false;
+			}
+
+			count++;
+		}
+
+		if(compare || (input == '')){
+			var row = div.insertRow(find);
+			var cell0 = row.insertCell(0);
+			var cell1 = row.insertCell(1);
+			var cell2 = row.insertCell(2);
+			var cell3 = row.insertCell(3);
+			var cell4 = row.insertCell(4);
+
+			cell0.innerHTML = Data[i].nama;
+			cell1.innerHTML = Data[i].semester;
+			cell2.innerHTML = Data[i].hobby;
+			cell3.innerHTML = '<button onclick="ShowUpdate('+i+')"> Update </button>';
+			cell4.innerHTML = '<button onclick="Delete('+i+')"> Delete </button>';
+
+			find++;
+		}
 	} 
 
 	if(DataMahasiswa.length == 0){
-		alert('Tidak Ada Data Untuk Ditampilkan, Silahkan Tambah Dulu Yaa !!!');
+		alert('Tidak Ada Data Untuk Ditampilkan');
 	}
 }
 
