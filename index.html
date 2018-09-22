@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Your First Ajax Application: Pets</title>
+		<meta charset="utf-8">
+			<script src="ajax.js"></script>
+			<style>
+			body {
+			font-family: Helvetica, Arial, sans-serif;
+			}
+			legend {
+			font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			
+				<legend>Data Mahasiswa</legend>
+				<table id="mahasiswa" border=1>
+				<tr>
+					<th> Nama </th>
+					<th> Semester </th>
+					<th> hobi </th>
+					<th> Update </th>
+					<th> Delete </th>
+				</tr>
+							
+				</table>
+				
+			
+		</div>
+		<button onclick="getDataMahasiswa()"> Click Here To Show Data</button>
+		<button onclick="ShowInsert()"> Tambah </button>
+		<br><br>
+		<div id="insert" style="display:none;">
+			<form>
+				Nama : <input type="text" id="nama"> 
+				Semester : <input type="text" id="semester">
+				Hobby : <input type="text" id="hobby">
+			</form>
+			<button onclick="Insert()"> Save </button>		
+		</div>
+
+		<div id="update" style="display:none;">
+			<form>
+				Nama : <input type="text" id="UpdateNama" disabled="">  
+				Semester : <input type="text" id="UpdateSemester">
+				Hobby : <input type="text" id="UpdateHobby">
+
+			</form>
+			<button onclick="Update()"> Update </button>		
+		</div>
+	</body>
+</html>
