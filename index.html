@@ -14,6 +14,10 @@
 		</style>
 	</head>
 	<body>
+		<!-- Field Search
+			setelah menekan huruf maka akan refresh table dengan menjalankan fungsi
+			getDataMahasiswa() dari ajax.js
+		-->
 		<input type="text" id="Search" onkeyup="getDataMahasiswa()" placeholder="Search for names.." title="Type in a name">
 		<div>
 			
@@ -31,18 +35,24 @@
 				
 			
 		</div>
+		<!-- event on click akan menampilkan data mahasiswa-->
 		<button onclick="getDataMahasiswa()"> Click Here To Show Data</button>
+		<!-- event on click akan menampikan form insert -->
 		<button onclick="ShowInsert()"> Tambah </button>
 		<br><br>
+		<!-- form insert -->
 		<div id="insert" style="display:none;">
 			<form>
 				Nama : <input type="text" id="nama"> 
 				Semester : <input type="text" id="semester">
 				Hobby : <input type="text" id="hobby">
 			</form>
+			<!-- event onclick untuk menjalankan fungsi insert data
+			yang ada pada ajax.js -->
 			<button onclick="Insert()"> Save </button>		
 		</div>
 
+		<!-- form update -->
 		<div id="update" style="display:none;">
 			<form>
 				Nama : <input type="text" id="UpdateNama" disabled="">  
@@ -50,6 +60,8 @@
 				Hobby : <input type="text" id="UpdateHobby">
 
 			</form>
+			<!-- event onclick untuk menjalankan fungsi update data
+			yang ada pada ajax.js -->
 			<button onclick="Update()"> Update </button>		
 		</div>
 	</body>
