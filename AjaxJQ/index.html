@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Your First Ajax Application: Pets</title>
+		<meta charset="utf-8">
+			<script src="JQuery.min.js"></script>
+			<script src="Ajax.js"></script>
+			<style>
+			body {
+			font-family: Helvetica, Arial, sans-serif;
+			}
+			legend {
+			font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Field Search
+			setelah menekan huruf maka akan refresh table dengan menjalankan fungsi
+			getDataMahasiswa() dari ajax.js
+		-->
+		<input type="text" id="Search" placeholder="Search for names.." title="Type in a name">
+		<div>
+			
+				<legend>Data Mahasiswa</legend>
+				<table id="mahasiswa" border=1>
+				<thead>
+					<tr>
+						<th> Nama </th>
+						<th> Semester </th>
+						<th> hobi </th>
+						<th> delete </th>
+					</tr>	
+				</thead>
+				<tbody id="mahasiswa-body">
+					
+				</tbody>
+							
+				</table>
+				
+			
+		</div>
+		<!-- event on click akan menampilkan data mahasiswa-->
+		<button id="show"> Click Here To Show Data</button>
+		<!-- event on click akan menampikan form insert -->
+		<button id="tambah"> Tambah </button>
+		<br><br>
+		<!-- form insert -->
+		<div id="insert" style="display:none;">
+			<form>
+				Nama : <input type="text" id="nama"> 
+				Semester : <input type="text" id="semester">
+				Hobby : <input type="text" id="hobby">
+			</form>
+			<!-- event onclick untuk menjalankan fungsi insert data
+			yang ada pada ajax.js -->
+			<br><br>
+			<button id="store-insert"> Save </button>		
+			<button id="close-insert"> Close </button>
+		</div>
+
+		<!-- form update -->
+		<div id="update" style="display:none;">
+			<form>
+				Nama : <input type="text" id="UpdateNama" disabled="">  
+				Semester : <input type="text" id="UpdateSemester">
+				Hobby : <input type="text" id="UpdateHobby">
+
+			</form>
+			<!-- event onclick untuk menjalankan fungsi update data
+			yang ada pada ajax.js -->
+			<br><br>
+			<button id="store-update"> Update </button>
+			<button id="close-update"> Close </button>		
+		</div>
+	</body>
+</html>
